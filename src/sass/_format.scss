@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: $text_size;
+    font-family: $text_font;
+  }
+
+  // @font-face {
+  //   font-family: $text_font;
+  //   src: url('../fonts/Roboto-Regular-webfont.eot'),
+  //        url('../fonts/Roboto-Regular-webfonteot#iefix') format('embedded-opentype'),
+  //        url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+  //        url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+  //        url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+  //   font-weight: normal;
+  //   font-style: normal;
+  // }

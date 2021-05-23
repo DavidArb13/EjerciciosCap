@@ -1,0 +1,16 @@
+//home 
+@mixin sizes ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flexbox ($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align: $align;
+}
+
+@mixin color ($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+}
