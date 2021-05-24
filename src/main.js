@@ -2,13 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
 
-
 import ejercicio1 from "./components/ejercicio1.vue";
 import ejercicio2 from "./components/ejercicio2.vue";
 import ejercicio3 from "./components/ejercicio3.vue";
 import ejercicio4 from "./components/ejercicio4.vue";
 import ejercicio5 from "./components/ejercicio5.vue";
-import ejercicio6 from "./components/ejercicio6.vue";
 import home from "./components/home.vue";
 
 Vue.use(VueRouter);
@@ -48,11 +46,6 @@ const router = new VueRouter({
       path: '/ejercicio5',
       name: 'ejercicio5',
       component: ejercicio5
-    },
-    {
-      path: '/ejercicio6',
-      name: 'ejercicio6',
-      component: ejercicio6
     },
   ]
 });
