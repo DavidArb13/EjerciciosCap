@@ -1,16 +1,16 @@
 <template>
-  <body>
-    <div class="container">
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <div class="icon">
+  <body class="bodyy">
+    <div class="cont">
+        <div class="cont__card">
+            <div class="card__face--face1">
+                <div class="card__content">
+                    <div class="card__icon--1">
                         <i class="fab fa-youtube"></i>
                     </div>
                 </div>
             </div>
-            <div class="face face2">
-                <div class="content">
+            <div class="card__face--face2">
+                <div class="card__content">
                     <h3>
                         <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
                     </h3>
@@ -21,16 +21,16 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <div class="icon">
+        <div class="cont__card">
+            <div class="cont__face--face1">
+                <div class="cont__content">
+                    <div class="cont__icon--2">
                         <i class="fab fa-facebook-square"></i>
                     </div>
                 </div>
             </div>
-            <div class="face face2">
-                <div class="content">
+            <div class="cont__face--face2">
+                <div class="cont__content">
                     <h3>
                         <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
                     </h3>
@@ -41,16 +41,16 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <div class="icon">
+        <div class="cont__card">
+            <div class="cont__face--face1">
+                <div class="cont__content">
+                    <div class="cont__icon--3">
                         <i class="fab fa-twitter"></i>
                     </div>
                 </div>
             </div>
-            <div class="face face2">
-                <div class="content">
+            <div class="cont__face--face2">
+                <div class="cont__content">
                     <h3>
                         <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
                     </h3>
@@ -69,12 +69,16 @@
 export default {};
 </script>
 
-<style>
-/* body {
+<style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+@import "../sass/vars.scss";
+@import "../sass/mixin.scss";
+
+.bodyy {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: #333;
+  background-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,28 +86,37 @@ export default {};
   background-color: #f1f1f1;
 }
 
-.container {
+.cont {
   width: 1000px;
   position: relative;
   display: flex;
   justify-content: space-between;
+  &__card{
+    position: relative;
+    border-radius: 10px;
+    border: 4px solid;
+    &___icon{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.7s;
+      z-index: 1;
+      &--1 {
+        background: #ff0000;
+      }
+      &--2 {
+        background: #4267b2;
+      }
+      &--3 {
+        background: #00aced;
+      }
+    }
+  }
+  
 }
-
-.container .card {
-  position: relative;
-  border-radius: 10px;
-}
-
-.container .card .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.7s;
-  z-index: 1;
-}
-
+/*
 .container .card:nth-child(1) .icon {
   background: #ff0000;
 }
