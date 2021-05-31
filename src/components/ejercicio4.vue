@@ -1,205 +1,263 @@
 <template>
-  <body class="bodyy">
-    <div class="cont">
-        <div class="cont__card">
-            <div class="card__face--face1">
-                <div class="card__content">
-                    <div class="card__icon--1">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="card__face--face2">
-                <div class="card__content">
-                    <h3>
-                        <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, at?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, consectetur!
-                    </p>
-                </div>
-            </div>
+  <div class="body">
+    <header class="header">
+      <a href="/" class="brand">
+        <img src="https://i.ibb.co/b6D3Bkn/corona-logo.png" class="brand-img" alt="corona" />
+      </a>
+
+      <div class="menuIco" id="icon-menu" @click="menu()">
+        <div class="menuIco__bar menuIco__bar--one"></div>
+        <div class="menuIco__bar menuIco__bar--two"></div>
+        <div class="menuIco__bar menuIco__bar--three"></div>
+      </div>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="main-nav-cont">
+          <li class="main-nav-cont__item">
+            <a href="/" class="main-nav-cont__link main-nav-cont__link--active">bears</a>
+          </li>
+          <li class="main-nav-cont__item">
+            <a href="/" class="main-nav-cont__link">shop</a>
+          </li>
+          <li class="main-nav-cont__item">
+            <a href="/" class="main-nav-cont__link">about</a>
+          </li>
+          <li class="main-nav-cont__item">
+            <a href="/" class="main-nav-cont__link">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="home">
+      <div class="home__split home__split--left">
+        <span class="home__small">scroll down</span>
+      </div>
+      <div class="home__mid">
+        <img src="https://i.ibb.co/HqXFb4c/bottle.png" alt="Cerveza" class="home__img" />
+      </div>
+      <div class="home__split home__split--right">
+        <h1 class="home__title">this is living</h1>
+        <div class="text">
+          <p class="home__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim possimus aperiam molestiae blanditiis suscipit. Quidem delectus, tempora sed sunt ut tempore dolorem culpa nulla voluptatibus molestias, ducimus doloremque id, beatae quae architecto optio sit fuga eius debitis laboriosam sint non?
+          </p>
         </div>
-        <div class="cont__card">
-            <div class="cont__face--face1">
-                <div class="cont__content">
-                    <div class="cont__icon--2">
-                        <i class="fab fa-facebook-square"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="cont__face--face2">
-                <div class="cont__content">
-                    <h3>
-                        <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, at?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, consectetur!
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="cont__card">
-            <div class="cont__face--face1">
-                <div class="cont__content">
-                    <div class="cont__icon--3">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="cont__face--face2">
-                <div class="cont__content">
-                    <h3>
-                        <a href="https://www.youtube.com/watch?v=IqLglZLmlu4" target="_blank">@WebDevelopment</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, at?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, consectetur!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    menu() {
+      const iconMenu = document.getElementById("icon-menu");
+      const mainNav = document.getElementById("main-nav");
+
+      iconMenu.addEventListener("click", () => {
+      mainNav.classList.toggle("show-nav");
+
+      iconMenu.classList.toggle("close-menu");
+      });
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
-@import "../sass/vars.scss";
-@import "../sass/mixin.scss";
+  @import "../sass/vars.scss";
+  @import "../sass/mixin.scss";
 
-.bodyy {
-  margin: 0;
-  padding: 0;
+  .body {
   min-height: 100vh;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-  background-color: #f1f1f1;
-}
+  font-family: $title_font;
+  font-weight: bold;
+  font-size: 1em;
+  color: $white;
+  }
 
-.cont {
-  width: 1000px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  &__card{
-    position: relative;
-    border-radius: 10px;
-    border: 4px solid;
-    &___icon{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: 0.7s;
-      z-index: 1;
-      &--1 {
-        background: #ff0000;
+  img {
+    max-width: 100%;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+  }
+
+  .brand {
+    padding-left: 15px;
+    width: 150px;
+  }
+
+  .menuIco {
+    position: fixed;
+    right: 30px;
+    cursor: pointer;
+    z-index: 100;
+    &__bar {
+      width: 35px;
+      background-color: $white;
+      margin: 5px;
+      height: 3px;
+
+      .close-menu &--one {
+        background-color: $black;
+        transform: rotate(-45deg) translate(-5px, 6px);
       }
-      &--2 {
-        background: #4267b2;
+
+      .close-menu &--two {
+        opacity: 0;
       }
-      &--3 {
-        background: #00aced;
+
+      .close-menu &--three {
+        background-color: $black;
+        transform: rotate(45deg) translate(-5px, -6px);
       }
     }
   }
+
+  .main-nav {
+    background-color: rgba(266, 266, 266, 0.8);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    min-height: 92vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    &__cont{
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      &__item{
+        list-style: none;
+        padding: 0.75rem;
+      }
+      &__link{
+        text-decoration: none;
+        color: $black;
+        text-transform: uppercase;
+        &--active{
+          display: flex;
+        }
+      } 
+    }
+  }
+
+  .show-nav {
+    display: flex;
+  }
+
+  .home {
+    display: flex;
+    &__split {
+      width: 50%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    &__split--left {
+      background: url("https://i.ibb.co/FHFDB8Q/bg-left.jpg") $splitLeft no-repeat
+        center / cover;
+      justify-content: flex-end;
+    }
+    &__small {
+      color: $black;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      position: absolute;
+      bottom: 30%;
+      left: 8%;
+      transform: rotate(-90deg);
+    }
+    &__small::before {
+      content: "";
+      position: absolute;
+      border: 1px solid #000;
+      width: 40px;
+      top: 9px;
+      left: -50%;
+    }
+    &__split--right {
+      background-color: $splitRight;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title,
+    &__description {
+      display: none;
+    }
+    &__mid {
+      position: absolute;
+      width: 100px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &__img {
+      filter: drop-shadow(15px 10px 50px #000);
+    }
+  }
   
-}
-/*
-.container .card:nth-child(1) .icon {
-  background: #ff0000;
-}
-.container .card:nth-child(2) .icon {
-  background: #4267b2;
-}
-.container .card:nth-child(3) .icon {
-  background: #00aced;
-}
+@media (min-width: $tablet_width) {
+  .header {
+    justify-content: space-between;
+    padding: 10px 100px;
 
-i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  color: #fff;
-  transition: 0.7s;
-}
+    .menuIco {
+      display: none;
+    }
+  }
+  
+  .main-nav {
+    display: flex;
+    min-height: 0;
+    position: unset;
+    width: unset;
+    background-color: unset;
+    &-cont {
+      display: flex;
+      &__item {
+        margin: 30px;
+      }
+    }
+    &__link {
+      color: $white;
+      font-size: 0.85em;
+    }
 
-.container .card .face {
-  width: 300px;
-  height: 200px;
-  transition: 0.5s;
-}
+    &-cont__link--active,
+    &-cont__link:hover {
+      color: $splitLeft;
+    }
+  }
+  
+  .home {
+    &__mid {
+      width: 130px;
+    }
+    &__title,
+    &__description {
+      display: block;
+    }
+    &__title {
+      font-size: 4em;
+      text-transform: uppercase;
+    }
+  }
 
-.container .card .face.face1 {
-  position: relative;
-  background: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(140px);
+  .text {
+    width: 25em;
+    text-align: justify;
+    font-weight: 400;
+    margin-top: 50px;
+    padding: 0;
+  }
 }
-
-.container .card:hover .face.face1 {
-  background: #ff0057;
-  transform: translateY(0);
-}
-
-.container .card:hover .face.face1 .content {
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.container .card .face.face1 .content i {
-  max-width: 100px;
-}
-
-.container .card .face.face2 {
-  position: relative;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform: translateY(-60px);
-}
-
-.container .card:hover .face.face2 {
-  transform: translateY(0);
-}
-
-.container .card .face.face2 .content p {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  color: #414141;
-}
-
-.container .card .face.face2 .content h3 {
-  margin: 0 0 10px 0;
-  padding: 0;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-}
-
-.container a {
-  text-decoration: none;
-  color: #414141;
-} */
 </style>

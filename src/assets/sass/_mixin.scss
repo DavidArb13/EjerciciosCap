@@ -1,0 +1,29 @@
+@mixin sizes ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin margin ($top, $right, $left, $button) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $button;
+  margin-left: $left;
+}
+
+@mixin padding ($top, $right, $button, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $button;
+  padding-left: $left
+}
+
+@mixin flexbox ($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align: $align;
+}
+
+@mixin color ($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+}
