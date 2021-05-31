@@ -17,7 +17,7 @@
           <i class="fas fa-lock"></i>
         </div>
         <router-link :to="'/'">
-          <button class="form__submit">Login</button>
+          <button class="form__submit">Home</button>
         </router-link>
       </form>
 

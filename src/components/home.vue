@@ -17,10 +17,10 @@
         <button class="home__but">Corona</button>
       </router-link>
       <router-link :to="'/ejercicio5'">
-        <button class="home__but">Ejercicio 5</button>
+        <button class="home__but">Redes</button>
       </router-link>
       <router-link :to="'/ejercicio6'">
-        <button class="home__but">Ejercicio 6</button>
+        <button class="home__but">Shop</button>
       </router-link>
     </div>
     @Daarb13 

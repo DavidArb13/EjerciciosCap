@@ -135,10 +135,6 @@ export default {
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 0;
-      &__item{
-        list-style: none;
-        padding: 0.75rem;
-      }
       &__link{
         text-decoration: none;
         color: $black;
@@ -147,6 +143,10 @@ export default {
           display: flex;
         }
       } 
+      &__item{
+        list-style: none;
+        padding: 0.75rem;
+      }
     }
   }
 
@@ -225,13 +225,17 @@ export default {
       display: flex;
       &__item {
         margin: 30px;
+        a {
+          text-decoration-line: none;
+          text-decoration: none;
+          color: white;
+        }
       }
     }
     &__link {
       color: $white;
       font-size: 0.85em;
     }
-
     &-cont__link--active,
     &-cont__link:hover {
       color: $splitLeft;
